@@ -1,0 +1,125 @@
+Case1
+Registration of new user
+Open main page https://book-ye.com.ua ->Page is opened
+Find “Увійти або зареєструватись”. Click on this button -> Modal window for login/registration is opened
+Find “Зареєструватись”. Click on it -> Fields “Ім’я”, “Ваша пошта” and “Пароль” are empty. Button “Зареєструватись” is available.
+Input valid user name to field “Ім’я” (Yuliia for example). Leave all other fields empty. Click on “Зареєструватись” -> User stay on modal window. Request was not sent.
+Input valid user name to field “Ім’я” (Yuliia for example) and valid email to field “Ваша пошта”. Leave field “Пароль” empty. Click on “Зареєструватись” -> User stay on modal window. Request was not sent.
+Input valid user name to field “Ім’я” (Yuliia for example) and valid email to field “Ваша пошта”.Input 4 spaces to field “Пароль” . Click on “Зареєструватись” -> User stay on modal window. Request was not sent.
+Input valid user name to field “Ім’я” (Yuliia for example) and valid email to field “Ваша пошта”.Input valid value to field “Пароль” (useruser for example). Click on “Зареєструватись” -> User registrated. User name displayed on the main page (on the class=“header-bottom__login-txt”)
+
+Case2
+Sending Feedback from the form
+Open main page https://book-ye.com.ua ->Page is opened
+Find “Зворотний зв’язок”. Click on it ->Modal window for feedback creating opened. On drop-down list first department Зворотний зв’язок” for field “Вберіть зі списку” chosen. Field “Ваше ім’я” and “Ваш email” should be field automatically.
+Press “Відправити” and try to send feedback without text -> Email is not sent.
+Input text with feedback (“I didn’t get my order. Please contact with me” for example). Press “Відправити” -> Feedback is sent. Modal window is closed.
+
+Case3
+Filter on the  page “Конституційне право”
+Open main page https://book-ye.com.ua ->Page is opened
+Click on “Каталог товарів” -> Drop-down list with different types of the literature genres opened
+Find “Нехудожня література” on the list. Click on it. -> Block with Non-Fiction opened https://book-ye.com.ua/catalog/nekhudozhnya-literatura/
+Click on “Юридична література” -> Page with Legal literature opened https://book-ye.com.ua/catalog/yurydychna-literatura/
+Click on “Конституційне право” -> Page with A constitutional right opened https://book-ye.com.ua/catalog/konstytutsijne-pravo/
+Click on filter “Сортувати по ”. For on “Cпадання ціни” -> Books sorted by price descending https://book-ye.com.ua/catalog/konstytutsijne-pravo/filter/clear/?sort=price_desc
+7. Choose language of books “Українська” -> Language chosen. Testing example of book displayed on the sorting result
+
+
+Case4
+Adding 1 item (book) to the basket
+Open main page https://book-ye.com.ua ->Page is opened
+Click on “Каталог товарів” -> Drop-down list with different types of the literature genres opened
+Find “Художня література” on the list. Click on it. -> Block with Fiction opened https://book-ye.com.ua/catalog/khudozhnya-literatura/
+Click on “Жахи, трилери” -> Page with Legal literature opened https://book-ye.com.ua/catalog/zhakhy-trylery/
+On the search window input “Дівчина, яку ми вбили”. Press search -> Book was found https://book-ye.com.ua/search/?q=%D0%94%D1%96%D0%B2%D1%87%D0%B8%D0%BD%D0%B0%2C+%D1%8F%D0%BA%D1%83+%D0%BC%D0%B8+%D0%B2%D0%B1%D0%B8%D0%BB%D0%B8
+Press “Купити” -> Modal window for order opened
+In the modal window press “Оформити замовлення” -> Page with basket opened (https://book-ye.com.ua/personal/order/make/). All fields for “Контактна інформація”, “Доставка”, “Оплата”, “Це для подарунка” and “Коментар на замовлення” are present on the page. Button “Підтвердити замовлення” is not available.
+
+
+
+Case5
+Deleting 1 item (book) from the basket
+Open main page https://book-ye.com.ua ->Page is opened
+Click on “Каталог товарів” -> Drop-down list with different types of the literature genres opened
+Find “Художня література” on the list. Click on it. -> Block with Fiction opened https://book-ye.com.ua/catalog/khudozhnya-literatura/
+Click on “Жахи, трилери” -> Page with Legal literature opened https://book-ye.com.ua/catalog/zhakhy-trylery/
+On the search window input “Дівчина, яку ми вбили”. Press search -> Book was found https://book-ye.com.ua/search/?q=%D0%94%D1%96%D0%B2%D1%87%D0%B8%D0%BD%D0%B0%2C+%D1%8F%D0%BA%D1%83+%D0%BC%D0%B8+%D0%B2%D0%B1%D0%B8%D0%BB%D0%B8
+Press “Купити” -> Modal window for order opened
+In the modal window press “Оформити замовлення” -> Page with basket opened (https://book-ye.com.ua/personal/order/make/). All fields for “Контактна інформація”, “Доставка”, “Оплата”, “Це для подарунка” and “Коментар на замовлення” are present on the page. Button “Підтвердити замовлення” is not available.
+Click on “Книгарні” on the header -> Page is opened https://book-ye.com.ua/contacts/
+Click on sign “Basket” -> Modal window for order opened
+In the modal window press “Оформити замовлення” -> Page with basket opened (https://book-ye.com.ua/personal/order/make/).
+ Press “Delete item” -> Basket is empty. User stay on current page https://book-ye.com.ua/personal/order/make/
+
+//Main page
+Main.Image = xpath(“.//img[contains(@src, ‘/local/templates/book_ye/images/components/header-logo.png')]”)
+Main.Button.Login = xpath(“.//span[@class=‘header-bottom__login-txt’]”)
+Main.Modal.Login = xpath(“.//div[@id=‘login-modal']”)
+Main.Modal.Registrate = xpath(“.//div[@id='register-modal']”)
+Main.Button.Registrate = xpath (“.//a[@class='auth-popup__bottom-link login-to-register’]”)
+Main.Field.UserName = xpath(“.//input[@name=‘REGISTER[NAME]']”)
+Main.Field.Email = xpath(“.//input[@name='REGISTER[EMAIL]']”)
+Main.Field.Password = xpath(“.//input[@name=‘REGISTER[PASSWORD]']”)
+Main.Button.Registrayte = xpath(“.//input[@value=‘Зареєструватись']”)
+Main.Link.Feedback = xpath (“.//a[@data-target=‘#feedback-form’]”)
+Main.Link.BookStores = xpath(“.//div[@class='header__top-nav']/a[1]”)
+
+//Feedback page
+Feedback.Modal = xpath(“.//form[@action='/local/templates/book_ye/ajax/add_feedback.php']”)
+
+//Non-fiction page
+Nonfiction.Link = xpath(“.//a[text()='Нехудожня література’]”)
+
+
+//Legal literature’s page
+Nonfiction.Link.LegalLitr = xpath(“.//li[@id=‘bx_1847241719_484’]”)
+
+// A constitutional right books page
+Nonfiction.Link.ConstitutionalLitr = xpath(“.//li[@id=‘bx_1847241719_491’]”
+Nonfiction.Filter.SortDesc = xpath(“.//*[text()='Сортувати по ']//..//div[2]//*[text()='Cпаданню ціни’]”)
+Nonfiction.Filter.UkrainianLanguage= xpath(}.//input[@id=‘arrFilter_79_1184059268’]//../label[1]})
+
+//Fiction page
+Fiction.Link.Main = xpath(“.//a[text()='Художня література']”)
+
+//Horror book`s page
+Fiction.Link.Horrors = xpath(“.//li[@id=‘bx_1847241719_544’]”)
+Fiction.Field.Search = xpath(“.//div[@class='header__search-wrap']”)
+Fiction.Button.Search = xpath(“.//input[@class='header__search-submit']”)
+Fiction.Item.PresentOnPage = xpath(“/catalog/zhakhy-trylery/divchyna-yaku-my-vbyly/“)
+Fiction.Button.Buy = xpath(“//div[@id='bx_3966226736_68690']/div[3]/a”)
+
+//Modal window for order
+ModalOrder.Item.IsPresent = xpath(“.//*[text()='Дівчина, яку ми вбили’]”)
+ModalOrder.Button.MakeOrder = xpath(“.//a[@href='/personal/order/make/']”)
+
+//Book shops page
+BookShops.Item.ListOfBookshops = xpath(“.//h1[text()='Мережа книгарень’]”)
+BookShops.Button.Basket = xpath(“.//span[@class='header-bottom__basket-icon header-bottom__icon’]”)
+
+
+//Basket
+Basket.Item.IsPresent = xpath(“.//a[@href=‘/catalog/zhakhy-trylery/divchyna-yaku-my-vbyly/']”)
+Basket.Field.FirstName = xpath(“.//div[@id='tab2']/input[1]”)
+Basket.Field.LastName = xpath(“.//div[@id='tab2']/input[2]”)
+Basket.Field.Email = xpath(“.//div[@id='tab2']/input[3]”)
+Basket.Field.Phone = xpath(“.//div[@id='tab2']/input[4]”)
+Basket.Field.Comment = xpath(“.//textarea[@name='ORDER_DESCRIPTION']”)
+
+Basket.RadioButton.UkrPost = xpath(“.//label[@for='radio9']”)
+Basket.RadioButton.NovaPost = xpath(“.//label[@for='radio13']”)
+Basket.RadioButton.KievPost = xpath(“.//label[@for='radio11']”)
+Basket.RadioButton.PaymentVisa = xpath(“.//label[@for='ID_PAY_SYSTEM_ID_6']”)
+Basket.RadioButton.Liqpay = xpath(“.//label[@for='ID_PAY_SYSTEM_ID_13']”)
+Basket.RadioButton.PaymentCash= xpath(“.//label[@for='ID_PAY_SYSTEM_ID_1']”)
+Basket.CheckBox.Present = xpath(“.//input[@id='ORDER_PROP_15']”)
+
+Basket.Button.Confirm = xpath(“.//button[@class='button d-none’]”)
+Basket.Button.DeleteItem = xpath(“.//i[@class='products__delete icon-letter-x']”)
+
+
+
+
+
+
